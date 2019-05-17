@@ -30,13 +30,15 @@ export default function Home() {
         <div>
             <Navbar />
             <div className={classes.home}>
-                <Typography variant='h1' align='center' style={{ color: 'white'}}>
-                    Miguel Soares
-                    <hr/>
+                <div>
+                    <Typography variant='h1' align='center' style={{ color: 'white'}}>
+                        Miguel Soares
+                        <hr/>
+                    </Typography>
                     <Typography variant='h2' align='center' style={{ color: 'white' }}>
                         Software Engenieer
                     </Typography>
-                </Typography>
+                </div>
             </div>
         </div >
     )

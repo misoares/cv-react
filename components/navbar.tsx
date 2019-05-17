@@ -4,13 +4,8 @@ import { makeStyles, Theme, createMuiTheme, MuiThemeProvider } from '@material-u
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import PhoneIcon from '@material-ui/icons/Phone';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import PersonPinIcon from '@material-ui/icons/PersonPin';
-import HelpIcon from '@material-ui/icons/Help';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
-import { white } from 'material-ui/styles/colors';
 
 interface TabContainerProps {
   children?: React.ReactNode;
@@ -34,8 +29,8 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: '100%',
     backgroundColor: theme.palette.background.paper,
   },
-  textColorSecondary:{
-    color:'white'
+  textColorSecondary: {
+    color: 'white'
   }
 }));
 
@@ -49,50 +44,36 @@ function Navbar() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
-  const theme = createMuiTheme({
-    palette: {
-      secondary: {
-        main: '#F2F2F2'
-      },
-      primary: {
-        main: '#F2F2F2'
-      }
-    },
-  }
-  )
-
-  function handleChange(event, newValue:number) {
+  function handleChange(event, newValue: number) {
     setValue(newValue);
   }
 
   return (
-    <MuiThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <AppBar position="static" color="secondary" style={{
-          background: `url("../static/images/barBackground.png")`,
-          /* Full height */
-          /* Center and scale the image nicely */
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover'
-        }}>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="fullWidth"
-            scrollButtons="on"
-            indicatorColor="secondary"
-            textColor="secondary"
-          >
-            <LinkTab label="Welcome" className={classes.textColorSecondary} href="/" />
-            <LinkTab label="Experience" className={classes.textColorSecondary} href="/experience" />
-            <LinkTab label="Portfolio" className={classes.textColorSecondary} href="/portfolio" />
-            <LinkTab label="About Me" className={classes.textColorSecondary} href="/about" />
-            <LinkTab label="Contacts" className={classes.textColorSecondary} href="/contacts" />
-          </Tabs>
-        </AppBar>
-      </div>
-    </MuiThemeProvider>
+        <div className={classes.root}>
+          <AppBar position="static" color="secondary" style={{
+            background: `url("../static/images/barBackground.png")`,
+            /* Full height */
+            /* Center and scale the image nicely */
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: 'cover'
+          }}>
+            <Tabs
+              value={value}
+              onChange={handleChange}
+              variant="fullWidth"
+              scrollButtons="on"
+              indicatorColor="secondary"
+              textColor="secondary"
+            >
+              <LinkTab label="Welcome" className={classes.textColorSecondary} href="/" />
+              <LinkTab label="Experience" className={classes.textColorSecondary} href="/experience" />
+              <LinkTab label="Portfolio" className={classes.textColorSecondary} href="/portfolio" />
+              <LinkTab label="About Me" className={classes.textColorSecondary} href="/about" />
+              <LinkTab label="Contacts" className={classes.textColorSecondary} href="/contacts" />
+            </Tabs>
+          </AppBar>
+        </div>
   );
 }
 

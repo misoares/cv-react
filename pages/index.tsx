@@ -1,6 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
-import Navbar from '../components/navbar'
 import Home from '../components/home'
 
 export default class extends React.Component {
@@ -14,5 +12,6 @@ export default class extends React.Component {
                 <Home />
             </div>
         )
+        
     }
 }

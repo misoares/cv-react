@@ -1,6 +1,15 @@
 import * as React from 'react';
 import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet-universal'
 import { markerData } from '../data/map';
+import L from 'leaflet'
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+    iconUrl: 'static/images/marker-icon.png',
+    shadowUrl: 'static/images/marker-shadow.png'
+});
+
 
 export interface IMyMarkerProps {
     position: number[],
@@ -42,7 +51,7 @@ export default function MyMap(props: IMyMapProps) {
     
     return (
         <div id="container" className="leaftlet-container" >
-            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css" />
             <Map style={{ height: "600px" }} center={position} zoom={state.zoom}>
                 <TileLayer
                     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'

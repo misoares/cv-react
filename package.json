@@ -9,18 +9,22 @@
     "@types/material-ui": "^0.21.6",
     "@types/node": "12.0.0",
     "@types/react-dom": "16.8.4",
+    "@types/react-jss": "^8.6.3",
     "@zeit/next-typescript": "^1.1.1",
+    "jss": "^9.8.7",
     "leaflet": "^1.5.1",
     "next": "^8.1.0",
     "next-react-svg": "^1.0.0",
     "react": "^16.8.6",
     "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
+    "react-jss": "^8.1.0",
     "react-leaflet": "^2.3.0",
     "react-leaflet-universal": "^2.1.0",
     "react-scripts": "3.0.1",
     "react-svg": "^9.0.4",
     "responsive-loader": "^1.2.0",
+    "styled-components": "^4.2.0",
     "svg-react-loader": "^0.4.6",
     "svg-sprite-loader": "^4.1.6",
     "tslint": "^5.16.0",
@@ -52,6 +56,7 @@
   "devDependencies": {
     "@types/next": "^8.0.5",
     "@types/react": "^16.8.17",
-    "babel-plugin-inline-react-svg": "^1.1.0"
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-plugin-styled-components": "^1.8.0"
   }
 }
