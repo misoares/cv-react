@@ -12,7 +12,7 @@ import { tsInterfaceDeclaration } from '@babel/types';
 const useStyles = makeStyles(
   createStyles({
     card: {
-      maxWidth: 375,
+      maxWidth: 400,
     },
     media: {
       height: 150,

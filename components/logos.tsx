@@ -16,6 +16,9 @@ import Docker from '../static/images/docker.svg'
 import Jenkins from '../static/images/jenkins.svg'
 import Linux from '../static/images/linux-tux.svg'
 import Apache from '../static/images/apache.svg'
+import Github from '../static/images/github.svg'
+import Linkedin from '../static/images/linkedin.svg'
+import Email from '../static/images/email.svg'
 
 export function ClojureLogo() {
   return (
@@ -166,6 +169,30 @@ export function ApacheLogo() {
     <div>
       <Apache  width={100} height={100} />
       <span style={{ display: 'block', textAlign: 'center' }}>Apache</span>
+    </div>
+  )
+}
+
+export function GithubLogo() {
+  return (
+    <div>
+      <Github width={48} height={48} />
+    </div>
+  )
+}
+
+export function EmailLogo() {
+  return (
+    <div>
+      <Email width={48} height={48} />
+    </div>
+  )
+}
+
+export function LinkedinLogo() {
+  return (
+    <div>
+      <Linkedin  width={48} height={48} />
     </div>
   )
 }

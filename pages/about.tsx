@@ -3,19 +3,53 @@ import Typography from '@material-ui/core/Typography';
 import Layout from '../components/layout';
 import TitleBanner from '../components/title-banner'
 import MyMap from '../components/my-map';
+import Grid, { GridSpacing } from '@material-ui/core/Grid';
 
 function AboutText() {
     return (
-        <>
-            <Typography variant='body1' paragraph >
-                I’ve always sought out opportunities and challenges that are meaningful to me. Although my professional path has taken many twists and turns — from touring and recording artist, to employee of the year at a non-profit, to dean's scholar at UPenn, to small business owner and entrepreneur — I've never stopped engaging my passion to help others and solve problems.
-                    <br />
-                As a web developer, I enjoy using my obsessive attention to detail, my unequivocal love for making things, and my mission-driven work ethic to literally change the world. That's why I’m excited to make a big impact at a high growth company.
+        <Grid
+            container
+            spacing={Number(1) as GridSpacing}
+            direction="row"
+            justify="space-evenly"
+            alignItems="center"
+        >
+            <Grid item md>
+                <Typography variant='body1' paragraph >
+                    I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.
                 </Typography>
-            <Typography variant='overline' >
-                Current focus: Clojure // React
-            </Typography>
-        </>
+                <Typography variant='overline' >
+                    Current focus: Clojure // React
+                </Typography>
+            </Grid>
+            <Grid item lg align="center">
+                <img src='../static/images/foto.jpg' alt='Miguel Soares' style={{ height: 'auto', width: 'auto', maxHeight: 256, borderRadius: '50%', filter: 'grayscale(50%)' }} />
+            </Grid>
+            <Grid item lg>
+                <Typography variant='body1'  paragraph>
+                    <strong>Birthday:</strong>
+                    <br />
+                    09/09/1990
+                    <br />
+                    <strong>Location:</strong>
+                    <br />
+                    Kloten, Zurich, Switzerland
+                    <br />
+                    <strong>Nationality:</strong>
+                    <br />
+                    Portuguese
+                    <br />
+                    <strong>Languages:</strong>
+                    <br />
+                    Portuguese (Native)
+                    <br />
+                    English (No problem)
+                    <br />
+                    German (Strugling)
+                    <br />
+                </Typography>
+            </Grid>
+        </Grid>
     )
 }
 
@@ -27,11 +61,11 @@ export default function About() {
                 quote='"Life isnt about finding yourself. Life is about creating yourself."'
                 quotePerson="- George Bernard Shaw"
             />
-            <br/>
+            <br />
             <AboutText />
             <br />
-            <TitleBanner 
-                title="MY JOURNEY" 
+            <TitleBanner
+                title="MY JOURNEY"
                 quote="If you want to go east, don't go west"
                 quotePerson="- Ramakrishna"
             />

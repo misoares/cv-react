@@ -10,8 +10,8 @@ export default function Layout (props: ILayoutProps) {
       <div style={{ backgroundColor: '#f2f2f2' }}>
         <Navbar />
         <br />
-        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
-            {props.children}
+        <div style={{ maxWidth: '1000px', margin: '0 auto'}}>
+            <div style={{marginRight: '1%', marginLeft:'1%'}}>{props.children}</div>
         </div>
       </div>
     );
