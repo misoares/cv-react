@@ -20,7 +20,7 @@ export const cardData: IPortfolioCardProps[] = [
         mediaTitle: "react",
         cardTitle: "CV Webpage",
         description: "CV webpage written in react with typescript using hooks and Next.js for SSR",
-        projectLink: "https://github.com/misoares/jenkinsfiles"
+        projectLink: "https://github.com/misoares/cv-react"
     },
     {
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg",

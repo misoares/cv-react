@@ -1,15 +1,6 @@
 import * as React from 'react';
 import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet-universal'
 import { markerData } from '../data/map';
-import L from 'leaflet'
-
-delete L.Icon.Default.prototype._getIconUrl;
-
-L.Icon.Default.mergeOptions({
-    iconUrl: 'static/images/marker-icon.png',
-    shadowUrl: 'static/images/marker-shadow.png'
-});
-
 
 export interface IMyMarkerProps {
     position: number[],
@@ -30,12 +21,32 @@ function MyMarker(props: IMyMarkerProps) {
 }
 
 function getMarkers(markers: IMyMarkerProps[]) {
-    return markers.map((marker,index) =>
+    return markers.map((marker, index) =>
         <MyMarker key={index} {...marker} />
     )
 }
 
 export interface IMyMapProps {
+}
+
+function ssrWraper(markers){
+    const L = require('leaflet')
+
+    delete L.Icon.Default.prototype._getIconUrl;
+
+    L.Icon.Default.mergeOptions({
+        iconUrl: 'static/images/marker-icon.png',
+        shadowUrl: 'static/images/marker-shadow.png'
+    });
+    return (
+        <>
+            <TileLayer
+                attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {markers}
+        </>
+    )
 }
 
 export default function MyMap(props: IMyMapProps) {
@@ -48,16 +59,12 @@ export default function MyMap(props: IMyMapProps) {
     )
     const position = [state.lat, state.lng]
     const markers = getMarkers(markerData);
-    
+
     return (
         <div id="container" className="leaftlet-container" >
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.0/dist/leaflet.css" />
             <Map style={{ height: "600px" }} center={position} zoom={state.zoom}>
-                <TileLayer
-                    attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                {markers}
+                {ssrWraper(markers)}
             </Map>
         </div>
     );

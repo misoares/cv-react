@@ -71,6 +71,7 @@ function Navbar() {
               <LinkTab label="Portfolio" className={classes.textColorSecondary} href="/portfolio" />
               <LinkTab label="About Me" className={classes.textColorSecondary} href="/about" />
               <LinkTab label="Contacts" className={classes.textColorSecondary} href="/contacts" />
+              <LinkTab label="Redux" className={classes.textColorSecondary} href="/redux-test" />
             </Tabs>
           </AppBar>
         </div>

@@ -3,18 +3,8 @@
 *** responsive fonts
 ** Experience
 *** Split text into topics in ExperienceCards
-** About me
-*** reactive margins (GRID)
-*** Pictures and details like http://www.pascalvangemert.nl/#/profile
-** Contacts
-*** Thank you bla bla bla
-*** Inspirational Sentence
-*** Feel free to contact me, also check my github blabla
-*** contacs
-** Home
-*** Idea 1
-**** Welcome to my page
-**** Link cards to the other pages
-*** Idea 2
-**** Image with welcome
-
+** Link to download CV
+** Deploy
+** BUGS
+*** Only load markers after component is mounted
+*** Fix issue with the ThemeProvider
