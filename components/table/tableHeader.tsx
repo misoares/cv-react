@@ -2,11 +2,11 @@ import { TableHead, TableCell, TableSortLabel, Checkbox, TableRow } from "@mater
 import PropTypes from 'prop-types';
 
 const headRows = [
+    { id: 'avatar', numeric: false, disablePadding: false, label: 'Avatar' },
     { id: 'id', numeric: false, disablePadding: true, label: 'Id' },
     { id: 'email', numeric: false, disablePadding: false, label: 'E-mail' },
     { id: 'first_name', numeric: false, disablePadding: false, label: 'First Name' },
     { id: 'last_name', numeric: false, disablePadding: false, label: 'Last Name' },
-    { id: 'avatar', numeric: false, disablePadding: false, label: 'Avatar' },
 ];
 
 export default function EnhancedTableHead(props) {

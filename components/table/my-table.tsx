@@ -7,9 +7,13 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
-import axios from 'axios'
 import EnhancedTableToolbar from './tableToolbar';
 import EnhancedTableHead from './tableHeader';
+import { UserState } from '../../redux/types';
+import { thunkFetchUsers } from '../../redux/actions';
+import { AppState } from '../../redux/store';
+import { connect } from 'react-redux';
+import { User } from '../../models/user';
 
 function desc(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -52,7 +56,16 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
 }));
 
-function MyTable() {
+const mapStateToProps = (state: AppState) => ({
+    userState: state.userState,
+})
+
+interface IMyTableProps {
+    thunkFetchUsers: typeof thunkFetchUsers
+    userState: UserState
+}
+
+function MyTable(props: IMyTableProps) {
     const classes = useStyles();
     const [order, setOrder] = React.useState('asc');
     const [orderBy, setOrderBy] = React.useState('calories');
@@ -60,20 +73,11 @@ function MyTable() {
     const [page, setPage] = React.useState(0);
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    const [data, setData] = useState({ data: [] });
-    const rows = data.data;
+    const rows:User[] = props.userState.users;
 
     useEffect(() => {
-        async function fetchData() {
-            try {
-                const response = await axios.get("https://reqres.in/api/users");
-                console.log(response.data);
-                setData(response.data);
-            } catch (error) {
-                console.log(error)
-            }
-        }
-        fetchData();
+        props.thunkFetchUsers()
+        console.log(props.userState.users)
     }, [])
 
     function handleRequestSort(event, property) {
@@ -84,7 +88,7 @@ function MyTable() {
 
     function handleSelectAllClick(event) {
         if (event.target.checked) {
-            const newSelecteds = rows.map(n => n.name);
+            const newSelecteds = rows.map(n => n.id);
             setSelected(newSelecteds);
             return;
         }
@@ -159,13 +163,13 @@ function MyTable() {
                                             <TableCell padding="checkbox">
                                                 <Checkbox checked={isItemSelected} />
                                             </TableCell>
+                                            <TableCell><img src={row.avatar ? row.avatar : "https://cdn.onlinewebfonts.com/svg/img_173956.png"} alt="Avatar" style={{height:128, width:128}}/></TableCell>
                                             <TableCell component="th" scope="row" padding="none">
                                                 {row.id}
                                             </TableCell>
-                                            <TableCell align="right">{row.email}</TableCell>
-                                            <TableCell align="right">{row.first_name}</TableCell>
-                                            <TableCell align="right">{row.last_name}</TableCell>
-                                            <TableCell align="right"><img src={row.avatar} alt="Avatar"/></TableCell>
+                                            <TableCell>{row.email}</TableCell>
+                                            <TableCell>{row.first_name}</TableCell>
+                                            <TableCell>{row.last_name}</TableCell>
                                         </TableRow>
                                     );
                                 })}
@@ -197,4 +201,7 @@ function MyTable() {
     );
 }
 
-export default MyTable;
+export default connect(
+    mapStateToProps,
+    { thunkFetchUsers }
+  )(MyTable);

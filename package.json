@@ -18,16 +18,15 @@
     "next": "^8.1.0",
     "next-react-svg": "^1.0.0",
     "react": "^16.8.6",
-    "react-bootstrap": "^1.0.0-beta.8",
     "react-dom": "^16.8.6",
     "react-jss": "^8.1.0",
     "react-leaflet": "^2.3.0",
-    "react-leaflet-markercluster": "^1.1.8",
     "react-leaflet-universal": "^2.1.0",
     "react-redux": "^7.0.3",
     "react-scripts": "3.0.1",
     "react-svg": "^9.0.4",
     "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0",
     "responsive-loader": "^1.2.0",
     "styled-components": "^4.2.0",
     "svg-react-loader": "^0.4.6",
@@ -61,6 +60,7 @@
   "devDependencies": {
     "@types/next": "^8.0.5",
     "@types/react": "^16.8.17",
+    "@types/react-redux": "^7.0.9",
     "babel-plugin-inline-react-svg": "^1.1.0",
     "babel-plugin-styled-components": "^1.8.0"
   }

@@ -3,9 +3,11 @@ import { makeStyles, Theme, TextField } from '@material-ui/core';
 import Fab from '@material-ui/core/Fab';
 import AddIcon from '@material-ui/icons/Add';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { AppState } from '../redux/store';
+import { thunkPostUsers } from '../redux/actions';
+import { UserState } from '../redux/types';
 
-export interface IMyFormProps {
-}
 
 const useStyles = makeStyles((theme: Theme) => ({
     container: {
@@ -19,25 +21,27 @@ const useStyles = makeStyles((theme: Theme) => ({
     }
 }));
 
-export default function MyForm(props: IMyFormProps) {
+const mapStateToProps = (state: AppState) => ({
+    userState: state.userState,
+})
+
+interface IMyFormProps {
+    thunkPostUsers: typeof thunkPostUsers
+    userState: UserState
+}
+
+function MyForm(props: IMyFormProps) {
     const classes = useStyles();
     const initialState = {
-        name: '',
-        job: ''
+        first_name: '',
+        last_name: ''
     };
 
     const [state, setState] = React.useState(initialState);
 
     function handleSubmit(event) {
-        alert('A name was submitted: ' + state.name + " " + state.job);
-        axios.post('https://reqres.in/api/users', state)
-            .then((response) => {
-                console.log(response)
-                return response;
-            })
-            .catch((error) => {
-                console.log(error);
-            });
+        //alert('A name was submitted: ' + state.name + " " + state.job);
+        props.thunkPostUsers(state)
         event.preventDefault();
     }
 
@@ -49,7 +53,7 @@ export default function MyForm(props: IMyFormProps) {
                 label="Name"
                 placeholder="Placeholder"
                 className={classes.textField}
-                onChange={e => setState({ ...state, name: e.target.value })}
+                onChange={e => setState({ ...state, first_name: e.target.value })}
                 margin="normal"
             />
             <TextField
@@ -58,7 +62,7 @@ export default function MyForm(props: IMyFormProps) {
                 placeholder="Placeholder"
                 helperText="Full width!"
                 margin="normal"
-                onChange={e => setState({ ...state, job: e.target.value })}
+                onChange={e => setState({ ...state, last_name: e.target.value })}
                 InputLabelProps={{
                     shrink: true,
                 }}
@@ -69,3 +73,7 @@ export default function MyForm(props: IMyFormProps) {
         </form>
     );
 }
+export default connect(
+    mapStateToProps,
+    { thunkPostUsers }
+  )(MyForm);
