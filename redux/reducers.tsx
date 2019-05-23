@@ -1,6 +1,6 @@
 
 import { UserState, FETCH_USERS, POST_USER, UserActionTypes } from './types';
-import { User } from '../models/user';
+import { User } from '../interfaces/interfaces';
 
 const initialState: UserState = {
     users: [] as User[],

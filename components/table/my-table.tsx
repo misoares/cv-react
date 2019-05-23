@@ -10,7 +10,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import EnhancedTableToolbar from './tableToolbar';
 import EnhancedTableHead from './tableHeader';
 import { UserState } from '../../redux/types';
-import { thunkFetchUsers } from '../../redux/actions';
+import { thunkFetchUsersAction } from '../../redux/actions';
 import { AppState } from '../../redux/store';
 import { connect } from 'react-redux';
 import { User } from '../../models/user';
@@ -61,7 +61,7 @@ const mapStateToProps = (state: AppState) => ({
 })
 
 interface IMyTableProps {
-    thunkFetchUsers: typeof thunkFetchUsers
+    thunkFetchUsersAction: typeof thunkFetchUsersAction
     userState: UserState
 }
 
@@ -76,8 +76,7 @@ function MyTable(props: IMyTableProps) {
     const rows:User[] = props.userState.users;
 
     useEffect(() => {
-        props.thunkFetchUsers()
-        console.log(props.userState.users)
+        props.thunkFetchUsersAction()
     }, [])
 
     function handleRequestSort(event, property) {
@@ -203,5 +202,5 @@ function MyTable(props: IMyTableProps) {
 
 export default connect(
     mapStateToProps,
-    { thunkFetchUsers }
+    { thunkFetchUsersAction }
   )(MyTable);

@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme: Theme) =>
             flexGrow: 1,
         },
         home: {
-            background: `url("../static/images/background.jpg")`,
+            background: `url("../static/images/background.webp")`,
             /* Full height */
             height: '100vh',
             /* Center and scale the image nicely */

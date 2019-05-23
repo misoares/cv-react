@@ -51,7 +51,7 @@ function Navbar() {
   return (
         <div className={classes.root}>
           <AppBar position="static" color="secondary" style={{
-            background: `url("../static/images/barBackground.png")`,
+            background: `url("../static/images/barBackground.webp")`,
             /* Full height */
             /* Center and scale the image nicely */
             backgroundPosition: 'center',

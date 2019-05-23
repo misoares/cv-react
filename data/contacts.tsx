@@ -1,6 +1,7 @@
 import { EmailLogo, LinkedinLogo, GithubLogo } from "../components/logos";
+import { IContact } from "../models/interfaces";
 
-export const contactsData = [
+export const contactsData:IContact[] = [
     {
         contact: 'mssoares5@gmail.com',
         icon: <EmailLogo />

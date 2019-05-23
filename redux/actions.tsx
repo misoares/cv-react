@@ -6,7 +6,7 @@ import { Action } from 'redux';
 import { AppState } from './store';
 import { ThunkAction } from 'redux-thunk';
 
-export const thunkFetchUsers = (
+export const thunkFetchUsersAction = (
 
 ): ThunkAction<void, AppState, null, Action<string>> => async dispatch => {
     const response = await axios.get<Response>("https://reqres.in/api/users");
@@ -18,7 +18,7 @@ export const thunkFetchUsers = (
     );
 };
 
-export const thunkPostUsers = (
+export const thunkPostUsersAction = (
     user: User
 ): ThunkAction<void, AppState, null, Action<string>> => async dispatch => {
     axios.post<User>('https://reqres.in/api/users', user)

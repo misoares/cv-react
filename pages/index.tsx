@@ -12,6 +12,6 @@ export default class extends React.Component {
                 <Home />
             </div>
         )
-        
+
     }
 }

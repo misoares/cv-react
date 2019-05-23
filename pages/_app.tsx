@@ -29,7 +29,7 @@ class MyApp extends App {
             <Container>
                 <Provider store={store}>
                     <Head>
-                        <title>My page</title>
+                        <title>Miguel Soares - Software Engineer</title>
                     </Head>
                     {/* Wrap every page in Jss and Theme providers */}
                     <JssProvider

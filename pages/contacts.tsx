@@ -10,7 +10,7 @@ export interface IContactsProps {
 
 function getContacts(contacts) {
   return contacts.map((contact, index) =>
-    <ListItem>
+    <ListItem key={index}>
       <ListItemIcon>
         {contact.icon}
       </ListItemIcon>

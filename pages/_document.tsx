@@ -5,11 +5,15 @@ import flush from 'styled-jsx/server';
 
 class MyDocument extends Document {
   render() {
-    const {context} =this.props;
+    const { context } = this.props;
 
     return (
       <html lang="en" dir="ltr">
         <Head>
+          <meta name="description" content="I am Fullstack Software Engineer, living in Zurich - Switzerland,  with a passion to solve problems and \
+          always eager to learn. My main tech stack is: Clojure, Java, React, Postgres, Docker and Kubernetes "/>
+          <link rel="shortcut icon" href="../static/favicon.ico" />
+          <link rel="manifest" href="../static/manifest.json" />
           <meta charSet="utf-8" />
           {/* Use minimum-scale=1 to enable GPU rasterization */}
           <meta
@@ -20,10 +24,6 @@ class MyDocument extends Document {
           <meta
             name="theme-color"
             content={context ? context.theme.palette.secondary.main : null}
-          />
-          <link
-            rel="stylesheet"
-            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"
           />
         </Head>
         <body>

@@ -23,7 +23,7 @@ function AboutText() {
                 </Typography>
             </Grid>
             <Grid item lg align="center">
-                <img src='../static/images/foto.jpg' alt='Miguel Soares' style={{ height: 'auto', width: 'auto', maxHeight: 256, borderRadius: '50%', filter: 'grayscale(50%)' }} />
+                <img src='../static/images/foto.webp' alt='Miguel Soares' style={{ height: 'auto', width: 'auto', maxHeight: 256, borderRadius: '50%', filter: 'grayscale(50%)' }} />
             </Grid>
             <Grid item lg>
                 <Typography variant='body1'  paragraph>

@@ -6,7 +6,7 @@ import { ResponsiveFontSizesOptions } from "@material-ui/core/styles/responsiveF
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         background: {
-            background: `url("../static/images/background.jpg")`,
+            background: `url("../static/images/banner.webp")`,
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
             backgroundSize: 'cover'
