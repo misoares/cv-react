@@ -13,7 +13,7 @@ import { UserState } from '../../redux/types';
 import { thunkFetchUsersAction } from '../../redux/actions';
 import { AppState } from '../../redux/store';
 import { connect } from 'react-redux';
-import { User } from '../../models/user';
+import { User } from '../../interfaces/interfaces';
 
 function desc(a, b, orderBy) {
     if (b[orderBy] < a[orderBy]) {
@@ -73,7 +73,7 @@ function MyTable(props: IMyTableProps) {
     const [page, setPage] = React.useState(0);
     const [dense, setDense] = React.useState(false);
     const [rowsPerPage, setRowsPerPage] = React.useState(5);
-    const rows:User[] = props.userState.users;
+    const rows: User[] = props.userState.users;
 
     useEffect(() => {
         props.thunkFetchUsersAction()
@@ -162,7 +162,7 @@ function MyTable(props: IMyTableProps) {
                                             <TableCell padding="checkbox">
                                                 <Checkbox checked={isItemSelected} />
                                             </TableCell>
-                                            <TableCell><img src={row.avatar ? row.avatar : "https://cdn.onlinewebfonts.com/svg/img_173956.png"} alt="Avatar" style={{height:128, width:128}}/></TableCell>
+                                            <TableCell><img src={row.avatar ? row.avatar : "https://cdn.onlinewebfonts.com/svg/img_173956.png"} alt="Avatar" style={{ height: 128, width: 128 }} /></TableCell>
                                             <TableCell component="th" scope="row" padding="none">
                                                 {row.id}
                                             </TableCell>
@@ -203,4 +203,4 @@ function MyTable(props: IMyTableProps) {
 export default connect(
     mapStateToProps,
     { thunkFetchUsersAction }
-  )(MyTable);
+)(MyTable);

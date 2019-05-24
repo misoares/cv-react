@@ -40,7 +40,11 @@ const useStyles = makeStyles((theme: Theme) => ({
 
 function LinkTab(props) {
   return <Link href={props.href}>
-    <Tab {...props} />
+    <Tab label={
+      <Typography variant='h6' align='center'>
+        {props.label}
+      </Typography>
+    } {...props} />
   </Link>
 }
 

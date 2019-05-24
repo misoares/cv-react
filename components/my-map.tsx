@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Map, TileLayer, Marker, Tooltip } from 'react-leaflet-universal'
 import { markerData } from '../data/map';
-import { useLayoutEffect } from 'react';
 
 export interface IMyMarkerProps {
     position: number[],
@@ -31,14 +30,6 @@ export interface IMyMapProps {
 }
 
 function ssrWraper(markers){
-    const L = require('leaflet')
-
-    delete L.Icon.Default.prototype._getIconUrl;
-
-    L.Icon.Default.mergeOptions({
-        iconUrl: 'static/images/marker-icon.png',
-        shadowUrl: 'static/images/marker-shadow.png'
-    });
     return (
         <>
             <TileLayer

@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from '../components/layout';
-import { makeStyles, Grid, ListItemIcon, ListItemText, Typography, List, ListItem } from '@material-ui/core';
+import { ListItemIcon, ListItemText, Typography, List, ListItem, ListItemAvatar } from '@material-ui/core';
 import TitleBanner from '../components/title-banner';
-import { GridSpacing } from '@material-ui/core/Grid';
 import { contactsData } from '../data/contacts';
+import PDF from '../static/images/pdf.svg'
 
 export interface IContactsProps {
 }
@@ -35,6 +35,10 @@ export default function Contacts() {
           </Typography>
       <List dense={dense}>
         {getContacts(contactsData)}
+        <ListItem>
+        <ListItemIcon><PDF width={48} height={48}/></ListItemIcon>
+        <a href="https://github.com/misoares/CV/raw/master/CV.pdf"><ListItemText primary="Resume" /></a>
+    </ListItem>
       </List>
     </Layout>
   );

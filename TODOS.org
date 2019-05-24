@@ -1,9 +1,5 @@
 * CV-REACT
-** Layout
-*** responsive fonts
 ** Experience
 *** Split text into topics in ExperienceCards
-** Link to download CV
+** Content
 ** Deploy
-** BUGS
-*** Fix issue with the ThemeProvider
