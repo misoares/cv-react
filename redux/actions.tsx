@@ -1,7 +1,6 @@
-import { POST_USER, FETCH_USERS } from './types';
-import { User } from '../models/user';
+import { POST_USER, FETCH_USERS, CHANGE_TAB, NavBarActionTypes } from './types';
+import { User, Response } from '../interfaces/interfaces';
 import axios from 'axios'
-import { Response } from '../models/response'
 import { Action } from 'redux';
 import { AppState } from './store';
 import { ThunkAction } from 'redux-thunk';
@@ -31,4 +30,13 @@ export const thunkPostUsersAction = (
         .catch((error) => {
             console.log(error);
         });
+}
+
+export const changeTabAction = (
+    tab: number
+):NavBarActionTypes => {
+    return {
+        type: CHANGE_TAB,
+        payload: tab
+    };
 }

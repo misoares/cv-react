@@ -33,14 +33,19 @@ let pageContext;
 export default function getPageContext() {
   // Make sure to create a new context for every server-side request so that data
   // isn't shared between connections (which would be bad).
-  if (!process.browser) {
+  const isBrowser = typeof window !== 'undefined';
+  if (!isBrowser) {
+    console.log('No browser')
     return createPageContext();
   }
 
   // Reuse context on the client-side.
   if (!pageContext) {
+    console.log('No Context')
+
     pageContext = createPageContext();
   }
 
+  console.log('Return')
   return pageContext;
 }

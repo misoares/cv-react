@@ -18,4 +18,19 @@ interface PostUserAction {
     payload: User
 }
 
-export type UserActionTypes = FetchUsersAction | PostUserAction
+export type UserActionTypes = FetchUsersAction | PostUserAction 
+
+// NAVBAR STATE
+
+export interface NavBarState {
+    tab: number
+}
+
+export const CHANGE_TAB = 'CHANGE_TAB'
+
+interface ChangeTabAction {
+    type: typeof CHANGE_TAB,
+    payload: number
+}
+
+export type NavBarActionTypes = ChangeTabAction

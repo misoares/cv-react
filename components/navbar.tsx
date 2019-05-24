@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles, Theme, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
+import { makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link';
+import { connect } from 'react-redux';
+import { AppState } from '../redux/store';
+import { changeTabAction } from '../redux/actions';
+import { NavBarState } from '../redux/types';
 
 interface TabContainerProps {
   children?: React.ReactNode;
@@ -30,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: theme.palette.background.paper,
   },
   textColorSecondary: {
-    color: 'white'
+    color: theme.palette.secondary.main
   }
 }));
 
@@ -40,12 +44,17 @@ function LinkTab(props) {
   </Link>
 }
 
-function Navbar() {
-  const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+interface INavBarProps {
+  changeTabAction: typeof changeTabAction
+  navbarState: NavBarState
+}
 
+function Navbar(props:INavBarProps) {
+  const classes = useStyles();
+  const value = props.navbarState.tab
+  
   function handleChange(event, newValue: number) {
-    setValue(newValue);
+    props.changeTabAction(newValue);
   }
 
   return (
@@ -77,5 +86,11 @@ function Navbar() {
         </div>
   );
 }
+const mapStateToProps = (state: AppState) => ({
+  navbarState: state.navbarState,
+})
 
-export default Navbar;
+export default connect(
+  mapStateToProps,
+  { changeTabAction }
+)(Navbar);
