@@ -8,9 +8,11 @@ import Typography from '@material-ui/core/Typography';
 
 function populateCardContent(content: String[]) {
   return content.map((line, index) =>
-    <Typography key={index} variant="body1" color="textPrimary" align="justify" component="li">
-      {line}
-    </Typography>
+    <ul>
+      <Typography key={index} variant="body1" color="textPrimary" align="justify" component="li">
+        {line}
+      </Typography>
+    </ul>
   )
 }
 
@@ -31,14 +33,14 @@ function ExperienceCard(props: IExperienceCardProps) {
     <Card >
       <CardHeader
         avatar={
-          <Avatar aria-label="Experience" src={logo}>
+          <Avatar aria-label="Experience" src={logo} alt="Logo">
             {avatar}
           </Avatar>
         }
         title={
           <div style={{ display: "flex", flexDirection: 'row', justifyContent: 'space-between', flexWrap: "wrap" }}>
             <Typography variant='h5' >{title}</Typography>
-            <Typography variant='h6' style={{ color: '#795548', fontWeight:'normal'}}>{position}</Typography>
+            <Typography variant='h6' style={{ color: '#795548', fontWeight: 'normal' }}>{position}</Typography>
           </div>
         }
         subheader={datePlace}>test </CardHeader>
