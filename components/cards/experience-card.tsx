@@ -5,8 +5,9 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
-import { blue500 } from 'material-ui/styles/colors';
-import { blue, red } from '@material-ui/core/colors';
+import { red } from '@material-ui/core/colors';
+import {  useTheme, makeStyles } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 function populateCardContent(content: String[]) {
   return content.map((line, index) =>
@@ -28,9 +29,12 @@ export interface IExperienceCardProps {
 
 function ExperienceCard(props: IExperienceCardProps) {
   const { logo, avatar, title, position, datePlace, cardContent, keywords } = props
+  const theme = useTheme();
+  const isBigScreen = useMediaQuery(theme.breakpoints.up('md'));
+  const cardStyle = isBigScreen ? { minWidth: "1000px"} : {}
 
   return (
-    <Card >
+    <Card style={cardStyle}>
       <CardHeader
         avatar={
           <Avatar aria-label="Experience" src={logo} alt="Logo" style={{backgroundColor: red[500]}}>
