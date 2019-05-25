@@ -1,9 +1,9 @@
 import { EmailLogo, LinkedinLogo, GithubLogo } from "../components/logos";
-import { IContact } from "../models/interfaces";
+import { IContact } from "../interfaces/interfaces";
 
 export const contactsData:IContact[] = [
     {
-        contact: 'mssoares5@gmail.com',
+        contact: 'miguel@misoares.ch',
         icon: <EmailLogo />
     },
     {

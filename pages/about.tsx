@@ -16,10 +16,14 @@ function AboutText() {
         >
             <Grid item md>
                 <Typography variant='body1' paragraph >
-                    I am an allround web developer. I am a senior programmer with good knowledge of front-end techniques. I love structure and order and I also stand for quality. I love spending time on fixing little details and optimizing web apps. Also I like working in a team, you'll learn faster and much more. As the saying goes: 'two heads are better than one'.
+                    I am an allround Software Engineer. 
+                    Although I ussually gravitaty more to backend and DevOps, I also like working on the frontend.
+                    I am self managed, love architecting applications and have a small obsetion with performance.
+                    What motivates me is the search for knowledge and new technologies.
+                    I have recently acquired a passion for functional programing.
                 </Typography>
                 <Typography variant='overline' >
-                    Current focus: Clojure // React
+                    Current focus: Clojure & React
                 </Typography>
             </Grid>
             <Grid item lg align="center">
@@ -66,7 +70,7 @@ export default function About() {
             <br />
             <TitleBanner
                 title="MY JOURNEY"
-                quote="If you want to go east, don't go west"
+                quote='"If you want to go east, dont go west"'
                 quotePerson="- Ramakrishna"
             />
             <br />

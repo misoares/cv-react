@@ -8,11 +8,9 @@ import Typography from '@material-ui/core/Typography';
 
 function populateCardContent(content: String[]) {
   return content.map((line, index) =>
-    <ul>
-      <Typography key={index} variant="body1" color="textPrimary" align="justify" component="li">
-        {line}
-      </Typography>
-    </ul>
+    <Typography key={index} variant="body1" color="textPrimary" align="justify" component="li">
+      {line}
+    </Typography>
   )
 }
 
@@ -46,7 +44,9 @@ function ExperienceCard(props: IExperienceCardProps) {
         subheader={datePlace}>test </CardHeader>
       <hr />
       <CardContent>
-        {populateCardContent(cardContent)}
+        <ul>
+          {populateCardContent(cardContent)}
+        </ul>
       </CardContent>
       <hr />
       <CardActions disableSpacing>

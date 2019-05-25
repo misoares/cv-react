@@ -26,8 +26,8 @@ export default function Contacts() {
     <Layout>
       <TitleBanner
         title="Contacts"
-        quote='"Life isnt about finding yourself. Life is about creating yourself."'
-        quotePerson="- George Bernard Shaw"
+        quote='"None of us is as smart as all of us."'
+        quotePerson="- Kenneth H. Blanchard"
       />
       <br />
       <Typography variant='h4' paragraph >
