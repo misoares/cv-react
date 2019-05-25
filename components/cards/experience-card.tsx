@@ -5,6 +5,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
+import { blue500 } from 'material-ui/styles/colors';
+import { blue, red } from '@material-ui/core/colors';
 
 function populateCardContent(content: String[]) {
   return content.map((line, index) =>
@@ -21,17 +23,17 @@ export interface IExperienceCardProps {
   position: string,
   datePlace: string,
   cardContent: string[],
-  techStack: string
+  keywords: string
 }
 
 function ExperienceCard(props: IExperienceCardProps) {
-  const { logo, avatar, title, position, datePlace, cardContent, techStack } = props
+  const { logo, avatar, title, position, datePlace, cardContent, keywords } = props
 
   return (
     <Card >
       <CardHeader
         avatar={
-          <Avatar aria-label="Experience" src={logo} alt="Logo">
+          <Avatar aria-label="Experience" src={logo} alt="Logo" style={{backgroundColor: red[500]}}>
             {avatar}
           </Avatar>
         }
@@ -41,17 +43,19 @@ function ExperienceCard(props: IExperienceCardProps) {
             <Typography variant='h6' style={{ color: '#795548', fontWeight: 'normal' }}>{position}</Typography>
           </div>
         }
-        subheader={datePlace}>test </CardHeader>
+        subheader={datePlace}
+        style={{padding: '8px'}}>
+         </CardHeader>
       <hr />
-      <CardContent>
+      <CardContent style={{padding: '0px'}}>
         <ul>
           {populateCardContent(cardContent)}
         </ul>
       </CardContent>
       <hr />
-      <CardActions disableSpacing>
+      <CardActions >
         <Typography variant="overline" component="p">
-          Tech Stack: {techStack}
+          Tech Stack: {keywords}
         </Typography>
       </CardActions>
     </Card>

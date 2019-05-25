@@ -5,7 +5,7 @@ export interface IExperienceCard {
     position: string
     datePlace: string
     cardContent: string[]
-    techStack: string
+    keywords: string
 }
 
 export interface ISkill {
