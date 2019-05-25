@@ -24,7 +24,7 @@ export const experienceData: IExperienceCard[] = [
         position: "Software Engineer",
         datePlace: "August 2017 - May 2019 | Zurich, CH",
         cardContent: [
-            "Architecture and development of a smart ERP with IoT integration whichincluded NFC, RFID and tracking devices.",
+            "Architecture and development of a smart ERP with IoT integration which included NFC, RFID and tracking devices.",
             "Development of the M2M microservices for device integration using Vertx.io",
             "Development of the REST API using Spring Boot with OAuth2, WebSockets, Multitenancy",
             "DevOps using Kubernetes and optimization of the working environment using automation and CI with Jenkins.",
@@ -43,7 +43,7 @@ export const experienceData: IExperienceCard[] = [
         datePlace: "November 2016 - August 2017 | Aveiro, PT",
         cardContent: [
             "Development of an IoT platform for indoor navigation, car parking and store advertisement using BLE beacons, targeted for shopping malls.",
-            "Development of the REST API using Vertx.io using a microservice architeture",
+            "Development of the REST API using Vertx.io using a microservices architecure",
             "Development of the indoor localization algorithm with BLE beacons in the mobile app using Ionic2",
             "Development of the Backoffice using Angular2+."
         ],
@@ -67,7 +67,7 @@ export const experienceData: IExperienceCard[] = [
         logo: "https://yt3.ggpht.com/a/AGF-l79F3LZIQqdSnIOXjwg-M5zwUyrUzDH08d7RqA=s900-mo-c-c0xffffffff-rj-k-no",
         avatar: "",
         title: "Universidade de Aveiro",
-        position: "Scolarship",
+        position: "Scholarship",
         datePlace: "February 2016 - November 2016 | Aveiro, PT",
         cardContent: [
             "Development in R of a demographic prediction model based on a legacy model \

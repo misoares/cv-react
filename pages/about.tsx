@@ -16,9 +16,9 @@ function AboutText() {
         >
             <Grid item md>
                 <Typography variant='body1' paragraph >
-                    I am an allround Software Engineer. 
-                    Although I ussually gravitaty more to backend and DevOps, I also like working on the frontend.
-                    I am self managed, love architecting applications and have a small obsetion with performance.
+                    I am an all rounder Software Engineer. 
+                    Although I usually gravitate more to backend and DevOps, I also like working on the frontend.
+                    I am self managed individual who loves architecting applications and have a small obsession with performance.
                     What motivates me is the search for knowledge and new technologies.
                     I have recently acquired a passion for functional programing.
                 </Typography>
@@ -49,7 +49,7 @@ function AboutText() {
                     <br />
                     English (No problem)
                     <br />
-                    German (Strugling)
+                    German (Struggling)
                     <br />
                 </Typography>
             </Grid>
