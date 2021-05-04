@@ -36,7 +36,7 @@ export default function Home() {
                         <hr/>
                     </Typography>
                     <Typography variant='h2' align='center' style={{ color: 'white' }}>
-                        Software Engenieer
+                        Software Engineer 
                     </Typography>
                 </div>
             </div>
